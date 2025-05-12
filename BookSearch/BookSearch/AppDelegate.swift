@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  BookSearch
-//
-//  Created by 조선우 on 5/12/25.
-//
-
 import UIKit
 import CoreData
 
