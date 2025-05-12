@@ -19,7 +19,7 @@
 		8C52BD1A2DD1EC2600EBC520 /* Exceptions for "BookSearch" folder in "BookSearch" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resource/Info.plist,
 			);
 			target = 8C52BD042DD1EC2400EBC520 /* BookSearch */;
 		};
