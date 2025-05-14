@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C52BF102DD2039000EBC520 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C52BF0F2DD2039000EBC520 /* .swiftlint.yml */; };
+		8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52BFB12DD3A7A100EBC520 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,7 @@
 			);
 			name = BookSearch;
 			packageProductDependencies = (
+				8C52BFB12DD3A7A100EBC520 /* SnapKit */,
 			);
 			productName = BookSearch;
 			productReference = 8C52BD052DD1EC2400EBC520 /* BookSearch.app */;
@@ -115,6 +118,9 @@
 			);
 			mainGroup = 8C52BCFC2DD1EC2400EBC520;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8C52BD062DD1EC2400EBC520 /* Products */;
 			projectDirPath = "";
@@ -395,6 +401,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C52BFB12DD3A7A100EBC520 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C52BCFD2DD1EC2400EBC520 /* Project object */;
 }
