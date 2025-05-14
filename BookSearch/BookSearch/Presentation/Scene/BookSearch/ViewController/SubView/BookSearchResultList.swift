@@ -10,7 +10,6 @@ class BookSearchResultList: UIView {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: SectionHeaderView.id
         )
-        collectionView.backgroundColor = .systemYellow
         return collectionView
     }()
 
@@ -60,6 +59,8 @@ class BookSearchResultList: UIView {
     }
 
     private func configureUI() {
+        searchResultCollectionView.backgroundColor = .systemYellow
+
         addSubview(searchResultCollectionView)
 
         searchResultCollectionView.snp.makeConstraints {
