@@ -2,15 +2,16 @@ import UIKit
 
 extension BookSearchViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        5
+        bookSearchViewModel.books.count
     }
 
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCell", for: indexPath)
-        cell.backgroundColor = .lightGray
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCell.id, for: indexPath) as? ResultCell else { return UICollectionViewCell() }
+
+        cell.configure(with: bookSearchViewModel.book(at: indexPath.item))
         return cell
     }
 

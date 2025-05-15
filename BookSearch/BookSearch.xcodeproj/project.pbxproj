@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C52BF102DD2039000EBC520 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C52BF0F2DD2039000EBC520 /* .swiftlint.yml */; };
 		8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52BFB12DD3A7A100EBC520 /* SnapKit */; };
+		8C52C0842DD488B800EBC520 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52C0832DD488B800EBC520 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */,
+				8C52C0842DD488B800EBC520 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,7 @@
 			name = BookSearch;
 			packageProductDependencies = (
 				8C52BFB12DD3A7A100EBC520 /* SnapKit */,
+				8C52C0832DD488B800EBC520 /* Alamofire */,
 			);
 			productName = BookSearch;
 			productReference = 8C52BD052DD1EC2400EBC520 /* BookSearch.app */;
@@ -120,6 +123,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8C52BD062DD1EC2400EBC520 /* Products */;
@@ -411,6 +415,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -418,6 +430,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8C52C0832DD488B800EBC520 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

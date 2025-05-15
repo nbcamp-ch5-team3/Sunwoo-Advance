@@ -1,13 +1,25 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        figureTabBar()
+    private let container: DIContainer
+
+    init(container: DIContainer) {
+        self.container = container
+        super.init(nibName: nil, bundle: nil)
     }
 
-    private func figureTabBar() {
-        let bookSearchViewController = UINavigationController(rootViewController: BookSearchViewController())
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureTabBar()
+    }
+
+    private func configureTabBar() {
+        let bookSearchViewController = UINavigationController(rootViewController: container.makeBookSearchViewContoller())
         let bookCartViewController = UINavigationController(rootViewController: BookCartViewController())
 
         bookSearchViewController.tabBarItem = UITabBarItem(

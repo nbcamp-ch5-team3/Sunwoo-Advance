@@ -1,15 +1,9 @@
 import SnapKit
 import UIKit
 
-class BookSearchResultList: UIView {
+final class BookSearchResultList: UIView {
     lazy var searchResultCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ResultCell")
-        collectionView.register(
-            SectionHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: SectionHeaderView.id
-        )
         return collectionView
     }()
 
@@ -33,7 +27,7 @@ class BookSearchResultList: UIView {
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.08)
+            heightDimension: .absolute(48)
         )
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
