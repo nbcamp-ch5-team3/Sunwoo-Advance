@@ -1,3 +1,5 @@
+import RxSwift
+
 protocol SearchBookUseCase {
-    func execute(query: String, completion: @escaping (Result<[Book], Error>) -> Void)
+    func execute(query: String) -> Single<[Book]>
 }

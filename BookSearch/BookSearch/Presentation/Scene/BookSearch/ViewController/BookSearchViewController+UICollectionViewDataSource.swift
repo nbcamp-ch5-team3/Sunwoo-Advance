@@ -1,17 +1,24 @@
+import RxSwift
 import UIKit
 
 extension BookSearchViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        bookSearchViewModel.books.count
+        let books = (try? bookSearchViewModel.bookSubject.value()) ?? []
+        return books.count
     }
 
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCell.id, for: indexPath) as? ResultCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ResultCell.id,
+            for: indexPath
+        ) as? ResultCell else { return UICollectionViewCell() }
 
-        cell.configure(with: bookSearchViewModel.book(at: indexPath.item))
+        if let book = try? bookSearchViewModel.bookSubject.value()[indexPath.item] {
+            cell.configure(with: book)
+        }
         return cell
     }
 

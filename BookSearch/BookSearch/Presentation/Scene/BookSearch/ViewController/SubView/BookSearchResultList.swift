@@ -53,7 +53,7 @@ final class BookSearchResultList: UIView {
     }
 
     private func configureUI() {
-        searchResultCollectionView.backgroundColor = .systemYellow
+        searchResultCollectionView.backgroundColor = .white
 
         addSubview(searchResultCollectionView)
 

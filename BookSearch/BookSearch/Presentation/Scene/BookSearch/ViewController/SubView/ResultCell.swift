@@ -8,7 +8,6 @@ final class ResultCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .black
-
         return label
     }()
 
@@ -37,6 +36,11 @@ final class ResultCell: UICollectionViewCell {
     }
 
     private func configureUI() {
+        contentView.layer.cornerRadius = 12
+        contentView.clipsToBounds = true
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.borderWidth = 1
+
         [titleLabel, authorLabel, priceLabel]
             .forEach { contentView.addSubview($0) }
 

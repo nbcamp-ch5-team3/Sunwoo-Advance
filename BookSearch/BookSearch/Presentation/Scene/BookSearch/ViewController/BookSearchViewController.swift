@@ -1,3 +1,4 @@
+import RxSwift
 import SnapKit
 import UIKit
 
@@ -5,6 +6,7 @@ final class BookSearchViewController: UIViewController {
     private let bookSearchBarView = BookSearchBarView()
     private let sectionHeaderView = SectionHeaderView()
     private let bookSearchResultList = BookSearchResultList()
+    private let disposeBag = DisposeBag()
 
     let bookSearchViewModel: BookSearchViewModel
 
@@ -66,10 +68,12 @@ final class BookSearchViewController: UIViewController {
     }
 
     private func bindViewModel() {
-        bookSearchViewModel.onUpdate = { [weak self] in
-            DispatchQueue.main.async {
-                self?.bookSearchResultList.searchResultCollectionView.reloadData()
-            }
-        }
+        bookSearchViewModel.bookSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] _ in
+                    self?.bookSearchResultList.searchResultCollectionView.reloadData()
+                }
+            ).disposed(by: disposeBag)
     }
 }

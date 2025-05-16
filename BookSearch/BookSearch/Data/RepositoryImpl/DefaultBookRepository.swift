@@ -1,3 +1,5 @@
+import RxSwift
+
 final class DefaultBookRepository: BookRepository {
     private let bookDataSource: BookDataSource
 
@@ -5,7 +7,7 @@ final class DefaultBookRepository: BookRepository {
         self.bookDataSource = bookDataSource
     }
 
-    func searchBooks(query: String, completion: @escaping (Result<[Book], any Error>) -> Void) {
-        bookDataSource.searchBooks(query: query, completion: completion)
+    func searchBooks(query: String) -> Single<[Book]> {
+        bookDataSource.searchBooks(query: query)
     }
 }

@@ -1,3 +1,5 @@
+import RxSwift
+
 final class DefaultSearchBookUseCase: SearchBookUseCase {
     private let bookRepository: BookRepository
 
@@ -5,7 +7,7 @@ final class DefaultSearchBookUseCase: SearchBookUseCase {
         self.bookRepository = bookRepository
     }
 
-    func execute(query: String, completion: @escaping (Result<[Book], any Error>) -> Void) {
-        bookRepository.searchBooks(query: query, completion: completion)
+    func execute(query: String) -> Single<[Book]> {
+        bookRepository.searchBooks(query: query)
     }
 }
