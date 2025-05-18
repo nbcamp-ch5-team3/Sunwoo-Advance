@@ -1,17 +1,22 @@
 import SnapKit
 import UIKit
 
+protocol BookDetailViewControllerDelegate: AnyObject {
+    func didTapAddButton(title: String)
+}
+
 final class BookDetailViewController: UIViewController {
     private let detailButtons = DetailButtons()
     private let bookDetailView = BookDetailView()
 
     var book: Book?
+    weak var delegate: BookDetailViewControllerDelegate? // delegate 프로퍼티
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDate()
         configureUI()
-        tapDetailButtons()
+        buttonAddTarget()
     }
 
     private func configureDate() {
@@ -36,9 +41,18 @@ final class BookDetailViewController: UIViewController {
         }
     }
 
-    private func tapDetailButtons() {
-        detailButtons.didTapCancelButton = { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
+    private func buttonAddTarget() {
+        detailButtons.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        detailButtons.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+    }
+
+    @objc private func cancelButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func addButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.didTapAddButton(title: self.book?.title ?? " ")
         }
     }
 }

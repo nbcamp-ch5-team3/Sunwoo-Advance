@@ -6,6 +6,7 @@ extension BookSearchViewController: UICollectionViewDelegate {
 
         let detailVC = BookDetailViewController()
         detailVC.book = book
+        detailVC.delegate = self
         detailVC.modalPresentationStyle = .automatic
 
         present(detailVC, animated: true, completion: nil)
