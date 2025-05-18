@@ -51,6 +51,10 @@ final class BookDetailViewController: UIViewController {
     }
 
     @objc private func addButtonTapped() {
+        if let book = book {
+            CoreDataManager.shared.saveBook(from: book)
+        }
+
         dismiss(animated: true) {
             self.delegate?.didTapAddButton(title: self.book?.title ?? " ")
         }
