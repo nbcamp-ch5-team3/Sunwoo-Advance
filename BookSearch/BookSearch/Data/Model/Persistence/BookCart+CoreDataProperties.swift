@@ -1,19 +1,14 @@
-import Foundation
 import CoreData
+import Foundation
 
-
-extension BookCart {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<BookCart> {
+public extension BookCart {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<BookCart> {
         return NSFetchRequest<BookCart>(entityName: "BookCart")
     }
 
-    @NSManaged public var title: String
-    @NSManaged public var authors: String
-    @NSManaged public var price: Int64
-
+    @NSManaged var title: String
+    @NSManaged var authors: String
+    @NSManaged var price: Int64
 }
 
-extension BookCart : Identifiable {
-
-}
+extension BookCart: Identifiable {}

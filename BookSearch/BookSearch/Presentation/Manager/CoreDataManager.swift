@@ -1,5 +1,5 @@
-import UIKit
 import CoreData
+import UIKit
 
 final class CoreDataManager {
     static let shared = CoreDataManager()
@@ -40,7 +40,7 @@ final class CoreDataManager {
     // Read
     func fetchBooks() -> [BookCart] {
         let request: NSFetchRequest<BookCart> = BookCart.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
 
         do {
             print("Fetch success")
@@ -60,6 +60,18 @@ final class CoreDataManager {
             try context.execute(deleteRequest)
             try context.save()
             print("Delete all success")
+        } catch {
+            print("Delete all fail")
+        }
+    }
+
+    // Delete
+    func deleteBook(_ book: BookCart) {
+        context.delete(book)
+
+        do {
+            try context.save()
+            print("Delete success: \(book.title)")
         } catch {
             print("Delete fail")
         }

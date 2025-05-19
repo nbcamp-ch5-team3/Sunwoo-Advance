@@ -1,7 +1,5 @@
-import Foundation
 import CoreData
+import Foundation
 
 @objc(BookCart)
-public class BookCart: NSManagedObject {
-
-}
+public class BookCart: NSManagedObject {}

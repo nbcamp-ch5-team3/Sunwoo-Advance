@@ -1,11 +1,11 @@
 import SnapKit
 import UIKit
 
-class DetailButtons: UIView {
+final class DetailButtons: UIView {
     let addButton: UIButton = {
         let button = UIButton()
         button.setTitle("담기", for: .normal)
-        button.titleLabel?.textColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
@@ -15,7 +15,7 @@ class DetailButtons: UIView {
     let cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("X", for: .normal)
-        button.titleLabel?.textColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGray
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
