@@ -1,6 +1,6 @@
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     private let container: DIContainer
 
     init(container: DIContainer) {
@@ -16,6 +16,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
+//        BookCartViewController().delegate = self
     }
 
     private func configureTabBar() {
@@ -25,13 +26,13 @@ class TabBarController: UITabBarController {
         bookSearchViewController.tabBarItem = UITabBarItem(
             title: "Search Tab",
             image: UIImage(systemName: "magnifyingglass"),
-            selectedImage: nil
+            tag: 0
         )
 
         bookCartViewController.tabBarItem = UITabBarItem(
             title: "Cart Tab",
             image: UIImage(systemName: "cart"),
-            selectedImage: nil
+            tag: 1
         )
 
         setViewControllers([bookSearchViewController, bookCartViewController], animated: false)

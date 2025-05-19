@@ -76,4 +76,9 @@ final class BookSearchViewController: UIViewController {
                 }
             ).disposed(by: disposeBag)
     }
+
+    func activeSearchBar() {
+        print("🎯 SearchBar 활성화 시도")
+        bookSearchBarView.bookSearchBar.becomeFirstResponder()
+    }
 }

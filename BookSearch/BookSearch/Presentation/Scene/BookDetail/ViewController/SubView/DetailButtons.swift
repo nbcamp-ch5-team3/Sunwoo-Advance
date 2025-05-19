@@ -1,23 +1,21 @@
 import SnapKit
 import UIKit
 
-class DetailButtons: UIView {
-    var didTapCancelButton: (() -> Void)?
-
-    private let addButton: UIButton = {
+final class DetailButtons: UIView {
+    let addButton: UIButton = {
         let button = UIButton()
         button.setTitle("담기", for: .normal)
-        button.titleLabel?.textColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
         return button
     }()
 
-    private let cancelButton: UIButton = {
+    let cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("X", for: .normal)
-        button.titleLabel?.textColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGray
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
@@ -36,7 +34,6 @@ class DetailButtons: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
-        buttonAddTarget()
     }
 
     @available(*, unavailable)
@@ -59,13 +56,5 @@ class DetailButtons: UIView {
         addButton.snp.makeConstraints {
             $0.height.equalTo(50)
         }
-    }
-
-    private func buttonAddTarget() {
-        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
-    }
-
-    @objc private func cancelButtonTapped() {
-        didTapCancelButton?()
     }
 }

@@ -1,8 +1,8 @@
 import SnapKit
 import UIKit
 
-final class ResultCell: UICollectionViewCell {
-    static let id = "ResultCell"
+final class CartCell: UITableViewCell {
+    static let id = "CartCell"
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -25,8 +25,8 @@ final class ResultCell: UICollectionViewCell {
         return label
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
     }
 
@@ -36,33 +36,29 @@ final class ResultCell: UICollectionViewCell {
     }
 
     private func configureUI() {
-        contentView.layer.cornerRadius = 12
-        contentView.clipsToBounds = true
-        contentView.layer.borderColor = UIColor.black.cgColor
-        contentView.layer.borderWidth = 1
-
-        [titleLabel, authorLabel, priceLabel]
-            .forEach { contentView.addSubview($0) }
+        [titleLabel, authorLabel, priceLabel].forEach { contentView.addSubview($0) }
 
         titleLabel.snp.makeConstraints {
-            $0.top.bottom.leading.equalToSuperview().inset(8)
+            $0.leading.equalToSuperview().inset(8)
+            $0.centerY.equalToSuperview()
         }
 
         authorLabel.snp.makeConstraints {
             $0.leading.equalTo(titleLabel.snp.trailing).offset(4)
-            $0.top.bottom.equalToSuperview().inset(8)
+            $0.centerY.equalToSuperview()
         }
 
         priceLabel.snp.makeConstraints {
-            $0.leading.equalTo(authorLabel.snp.trailing).offset(12)
-            $0.top.bottom.trailing.equalToSuperview().inset(8)
+            $0.leading.equalTo(authorLabel.snp.trailing).offset(8)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.centerY.equalToSuperview()
         }
     }
 
-    func configure(with book: Book) {
+    func configure(with book: BookCart) {
         titleLabel.text = formatLabel(text: book.title, limit: 15)
-        authorLabel.text = formatLabel(text: book.authors.first ?? " ", limit: 5)
-        priceLabel.text = "\(formatPrice(book.price))원"
+        authorLabel.text = formatLabel(text: book.authors, limit: 5)
+        priceLabel.text = "\(formatPrice(Int(book.price)))원"
     }
 
     private func formatLabel(text: String, limit: Int) -> String {
