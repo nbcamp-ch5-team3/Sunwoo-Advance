@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8C52BF102DD2039000EBC520 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C52BF0F2DD2039000EBC520 /* .swiftlint.yml */; };
+		8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52BFB12DD3A7A100EBC520 /* SnapKit */; };
+		8C52C0842DD488B800EBC520 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52C0832DD488B800EBC520 /* Alamofire */; };
+		8C52C0C22DD6FD4F00EBC520 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52C0C12DD6FD4F00EBC520 /* RxCocoa */; };
+		8C52C0C42DD6FD4F00EBC520 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C52C0C32DD6FD4F00EBC520 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,7 +23,7 @@
 		8C52BD1A2DD1EC2600EBC520 /* Exceptions for "BookSearch" folder in "BookSearch" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resource/Info.plist,
 			);
 			target = 8C52BD042DD1EC2400EBC520 /* BookSearch */;
 		};
@@ -41,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C52C0C22DD6FD4F00EBC520 /* RxCocoa in Frameworks */,
+				8C52BFB22DD3A7A100EBC520 /* SnapKit in Frameworks */,
+				8C52C0C42DD6FD4F00EBC520 /* RxSwift in Frameworks */,
+				8C52C0842DD488B800EBC520 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +94,10 @@
 			);
 			name = BookSearch;
 			packageProductDependencies = (
+				8C52BFB12DD3A7A100EBC520 /* SnapKit */,
+				8C52C0832DD488B800EBC520 /* Alamofire */,
+				8C52C0C12DD6FD4F00EBC520 /* RxCocoa */,
+				8C52C0C32DD6FD4F00EBC520 /* RxSwift */,
 			);
 			productName = BookSearch;
 			productReference = 8C52BD052DD1EC2400EBC520 /* BookSearch.app */;
@@ -115,6 +127,11 @@
 			);
 			mainGroup = 8C52BCFC2DD1EC2400EBC520;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8C52C0C02DD6FD4F00EBC520 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8C52BD062DD1EC2400EBC520 /* Products */;
 			projectDirPath = "";
@@ -199,7 +216,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookSearch/Info.plist;
+				INFOPLIST_FILE = BookSearch/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -231,7 +248,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookSearch/Info.plist;
+				INFOPLIST_FILE = BookSearch/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -395,6 +412,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		8C52C0C02DD6FD4F00EBC520 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C52BFB12DD3A7A100EBC520 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52BFB02DD3A7A100EBC520 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8C52C0832DD488B800EBC520 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52C0822DD488B800EBC520 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8C52C0C12DD6FD4F00EBC520 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52C0C02DD6FD4F00EBC520 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8C52C0C32DD6FD4F00EBC520 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C52C0C02DD6FD4F00EBC520 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C52BCFD2DD1EC2400EBC520 /* Project object */;
 }
